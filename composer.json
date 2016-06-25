@@ -10,5 +10,10 @@
     "require": {
         "php" : ">=5.5.0",
         "laravel/framework": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelRequest\\": "src"
+        }
     }
 }
