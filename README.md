@@ -22,3 +22,36 @@ Install service provider
 ];
 ```
 
+publish migrations and config file
+
+```bash
+php artisan vendor:publish --provider="LaravelRequest\LaravelRequestProvider"
+```
+Afterwards you can edit the file ```config/oauth2.php``` to suit your needs.
+
+Run migration to create required tables
+
+```bash
+php artisan migrate
+```
+
+Finally, simply register the newly created class in your middleware stack.
+```php
+// app/Http/Kernel.php
+
+class Kernel extends HttpKernel
+{
+    protected $middleware = [
+        // ...
+        \LaravelRequest\Middleware\LogAfterRequest::class,
+    ];
+
+    // ...
+}
+```
+
+That's it!
+
+# License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
