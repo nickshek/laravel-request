@@ -24,14 +24,14 @@ Install service provider
 // config/app.php
 'providers' => [
     ...
-    LaravelRequest\LaravelRequestProvider::class,
+    LaravelRequest\LaravelRequestServiceProvider::class,
 ];
 ```
 
 publish migrations and config file
 
 ```bash
-php artisan vendor:publish --provider="LaravelRequest\LaravelRequestProvider"
+php artisan vendor:publish --provider="LaravelRequest\LaravelRequestServiceProvider"
 ```
 Afterwards you can edit the file ```config/laravel-request.php``` to suit your needs.
 

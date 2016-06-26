@@ -5,7 +5,7 @@ namespace LaravelRequest;
 use Illuminate\Support\ServiceProvider;
 use LaravelRequest\Middleware\LogAfterRequest;
 
-class LaravelRequestProvider extends ServiceProvider
+class LaravelRequestServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
