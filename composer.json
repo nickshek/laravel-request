@@ -1,19 +1,29 @@
 {
-    "name": "nickshek/laravel-request",
-    "description": "A simple package to log all the requests in a database for Laravel 5",
-    "authors": [
-        {
-            "name": "Nick Shek",
-            "email": "alfshek@hotmail.com"
-        }
-    ],
-    "require": {
-        "php" : ">=5.5.0",
-        "laravel/framework": "^5.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "LaravelRequest\\": "src"
-        }
+  "name": "nickshek/laravel-request",
+  "description": "A simple package to log all the requests in a database for Laravel 5",
+  "authors": [{
+    "name": "Nick Shek",
+    "email": "alfshek@hotmail.com"
+  }],
+  "require": {
+    "php": ">=5.5.0",
+    "laravel/framework": "^5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravelRequest\\": "src"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaravelRequest\\Test\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.4",
+    "orchestra/testbench": "^3.2"
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
 }
