@@ -27,7 +27,7 @@ publish migrations and config file
 ```bash
 php artisan vendor:publish --provider="LaravelRequest\LaravelRequestProvider"
 ```
-Afterwards you can edit the file ```config/oauth2.php``` to suit your needs.
+Afterwards you can edit the file ```config/laravel-request.php``` to suit your needs.
 
 Run migration to create required tables
 
