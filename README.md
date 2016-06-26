@@ -41,7 +41,26 @@ Run migration to create required tables
 php artisan migrate
 ```
 
-Finally, simply register the newly created class in your middleware stack.
+By default, the middleware ```\LaravelRequest\Middleware\LogAfterRequest::class``` enables logging on all pages. You'll probably want to inherit your own class containing you application's logging rule handler.
+
+```php
+namespace App\Http\Middleware;
+// app/Http/Middleware/LogAfterRequestExceptAdmin.php
+use LaravelRequest\Middleware\LogAfterRequest;
+
+class LogAfterRequestExceptAdmin extends LogAfterRequest
+{
+  /**
+  * @return bool
+  */
+  protected function shouldLogRequest($request, $response)
+  {
+    return $request->segment(1) !== 'admin';
+  }
+}
+```
+Next, simply register the newly created class in your middleware stack.
+
 ```php
 // app/Http/Kernel.php
 
@@ -49,7 +68,7 @@ class Kernel extends HttpKernel
 {
     protected $middleware = [
         // ...
-        \LaravelRequest\Middleware\LogAfterRequest::class,
+        \App\Http\Middleware\LogAfterRequestExceptAdmin::class,
     ];
 
     // ...
