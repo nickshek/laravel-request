@@ -9,14 +9,13 @@ A simple package to log all the requests in a database for Laravel 5.
 
 Inspired by [django-request](https://github.com/django-request/django-request)
 
-**The project is still under development.**
-
+> Note: This package is still very alpha!
 
 # Install
 You can install the package via composer:
 
 ```bash
-composer require nickshek/laravel-request:dev-master
+composer require nickshek/laravel-request
 ```
 
 Install service provider
